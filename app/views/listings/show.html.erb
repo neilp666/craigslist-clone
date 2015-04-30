@@ -1,0 +1,19 @@
+<p>
+  <strong>Title:</strong>
+  <%= @listing.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<% if @listing.price %>
+  <p>
+    <strong>Price:</strong>
+    <%= number_to_currency(@listing.price) %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_listing_path(@listing), class: 'btn btn-default' %>
+<%= link_to 'Destroy', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
